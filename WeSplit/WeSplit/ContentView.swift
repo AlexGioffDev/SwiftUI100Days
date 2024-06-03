@@ -8,20 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
-    let students = ["Harry", "Hermione", "Ron"]
-    @State private var selectedStudent = "Harry"
+    @State private var checkAmount = 0.0
+    @State private var peoples = 2
+    
+    var totalPerson: Double {
+        // Calculate
+        let peopleCount = Double(peoples + 2)
+        return checkAmount / peopleCount
+    }
     
     var body: some View {
-        NavigationStack {
+        NavigationStack{
             Form {
-                Picker("Select your student", selection: $selectedStudent) {
-                    ForEach(students, id: \.self) {
-                        Text($0)
-                    }
+                Section {
+                    TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "EUR")).keyboardType(.decimalPad)
+                    Picker("Number of people", selection: $peoples) {
+                        ForEach(2..<11){
+                            Text("\($0) peoples")
+                        }
+                    }.pickerStyle(.navigationLink)
+                }
+                Section{
+                    Text(totalPerson, format: .currency(code: Locale.current.currency?.identifier ?? "EUR"))
                 }
             }
-            .navigationTitle("Select A student: \(selectedStudent)")
+            .navigationTitle("We Split")
             .navigationBarTitleDisplayMode(.inline)
+            
+           
         }
 
     }
