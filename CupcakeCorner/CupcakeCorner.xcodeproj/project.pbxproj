@@ -13,6 +13,7 @@
 		016E2E762C2AA876001D6B79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 016E2E752C2AA876001D6B79 /* Preview Assets.xcassets */; };
 		01B798192C2B0E9600DE2334 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B798182C2B0E9600DE2334 /* Order.swift */; };
 		01B7981B2C2B114800DE2334 /* AdressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7981A2C2B114800DE2334 /* AdressView.swift */; };
+		01FD38852C2BD73700EFA293 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD38842C2BD73700EFA293 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		016E2E752C2AA876001D6B79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		01B798182C2B0E9600DE2334 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		01B7981A2C2B114800DE2334 /* AdressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressView.swift; sourceTree = "<group>"; };
+		01FD38842C2BD73700EFA293 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				016E2E6E2C2AA875001D6B79 /* CupcakeCornerApp.swift */,
 				016E2E702C2AA875001D6B79 /* ContentView.swift */,
 				01B7981A2C2B114800DE2334 /* AdressView.swift */,
+				01FD38842C2BD73700EFA293 /* CheckoutView.swift */,
 				01B798182C2B0E9600DE2334 /* Order.swift */,
 				016E2E722C2AA876001D6B79 /* Assets.xcassets */,
 				016E2E742C2AA876001D6B79 /* Preview Content */,
@@ -145,6 +148,7 @@
 			files = (
 				01B7981B2C2B114800DE2334 /* AdressView.swift in Sources */,
 				01B798192C2B0E9600DE2334 /* Order.swift in Sources */,
+				01FD38852C2BD73700EFA293 /* CheckoutView.swift in Sources */,
 				016E2E712C2AA875001D6B79 /* ContentView.swift in Sources */,
 				016E2E6F2C2AA875001D6B79 /* CupcakeCornerApp.swift in Sources */,
 			);
