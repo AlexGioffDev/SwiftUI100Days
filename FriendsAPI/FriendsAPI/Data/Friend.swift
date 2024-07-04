@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 struct Friend: Codable {
     var id: String
     var name: String

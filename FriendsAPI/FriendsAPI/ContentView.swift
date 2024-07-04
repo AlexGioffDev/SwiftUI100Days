@@ -5,13 +5,16 @@
 //  Created by Alex Gioffre' on 30/06/24.
 //
 
+import SwiftData
 import SwiftUI
 
 
 struct ContentView: View {
     
-    @State private var users = [User]()
+    
     @State private var path = NavigationPath()
+    @Query var users: [User]
+    @Environment(\.modelContext) var modelContext
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -36,8 +39,9 @@ struct ContentView: View {
                 .scrollContentBackground(.hidden)
                 .padding(.bottom, 9)
                 .task {
-                    await loadUserData()
-                    
+                    if users.isEmpty {
+                        await loadUserData()
+                    }
                     
                 }
             }
@@ -52,7 +56,6 @@ struct ContentView: View {
             return
         }
         
-        guard users.isEmpty else { return }
         
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
@@ -60,7 +63,9 @@ struct ContentView: View {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             let decodedData = try decoder.decode([User].self, from: data)
-            users = decodedData
+            for user in decodedData {
+                modelContext.insert(user)
+            }
         } catch {
             print("Invalid Data")
         }
